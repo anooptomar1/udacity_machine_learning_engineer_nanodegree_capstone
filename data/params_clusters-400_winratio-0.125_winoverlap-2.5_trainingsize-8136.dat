@@ -1,0 +1,1 @@
+{"window_ratio": 0.125, "window_overlap": 2.5, "image_size": 256, "test_size": 904, "num_clusters": 400, "training_size": 8136, "classifier": "best", "num_classes": 113}

@@ -1,10 +1,9 @@
-from tuning_helper import *
-from evaluators.evaluator import Evaluator
-from sketch_recognition_trainer import FeatureExtractorKeys
-from sketch_recognition_trainer import MeanShiftSketchRecognitionTrainer
-from sketch_recognition_trainer import ParamKeys
-from sketch_recognition_trainer import SketchRecognitionTrainer
 import numpy as np
+
+from evaluator import Evaluator
+from sketch_recognition_trainer import MeanShiftSketchRecognitionTrainer
+from sketch_recognition_trainer import SketchRecognitionTrainer
+from tuning_helper import *
 
 
 def baseline_test():
@@ -492,38 +491,32 @@ def build_cookbook_and_featurevectors_for_model_tuning():
 if __name__ == '__main__':
     print __file__
 
-    # print baseline_test()
+    print baseline_test()
 
-    ## Observing affects of training set size ##
+    """ Testing affects of training set size """
 
-    # print training_size_test(split=0.5)
-    # print training_size_test(split=0.8)
-    # print training_size_test(split=0.3)
+    for test_size in [0.3, 0.5, 0.8, 1.0]:
+        print training_size_test(split=test_size)
 
-    # print cluster_size_test(num_clusters=50)
-    #print cluster_size_test(num_clusters=200)
-    #num_clusters_list = [400, 600, 800, 1000, 1200]
-    # num_clusters_list = [800, 1000, 1200]
-    # for num_clusters in num_clusters_list:
-    #     print cluster_size_test(num_clusters=num_clusters)
+    """ Testing affects of adjusting cluster size """
+    num_clusters_list = [200, 400, 600, 800, 1000, 1200]
+    for num_clusters in num_clusters_list:
+        print cluster_size_test(num_clusters=num_clusters)
 
-    ## Testing influence from adjusting window resolutions
+    """ Testing influence from adjusting window resolutions """
+    window_resolutions = [0.01, 0.05, 0.08, 0.10, 0.125, 0.25, 0.30, 0.35, 0.45]
+    for window_resolution in window_resolutions:
+        print window_resolution_test(window_resolution=window_resolution)
 
-    # window_resolutions = [0.10, 0.125, 0.25, 0.30, 0.35, 0.45]
-    # for window_resolution in window_resolutions:
-    #     print window_resolution_test(window_resolution=window_resolution)
+    """ Testing influence from adjusting window overlap """
+    window_overlaps = [1., 1.5, 2., 2.5, 3.]
+    for window_overlap in window_overlaps:
+        print window_overlap_test(window_overlap=window_overlap)
 
-    # window_resolutions = [0.01, 0.05, 0.08]
-    # for window_resolution in window_resolutions:
-    #     print window_resolution_test(window_resolution=window_resolution)
-
-    # window_overlaps = [1., 1.5, 2., 2.5, 3.]
-    # for window_overlap in window_overlaps:
-    #     print window_overlap_test(window_overlap=window_overlap)
-
-    # clustering_algorithms = ['kmeans', 'minibatchkmeans', 'meanshift', 'kmeans', 'minibatchkmeans', 'meanshift']
-    # for clustering_algorithm in clustering_algorithms:
-    #     print clustering_algorithm_test(clustering=clustering_algorithm)
+    """ Testing influence on clustering algorithms """
+    clustering_algorithms = ['kmeans', 'minibatchkmeans', 'meanshift', 'kmeans', 'minibatchkmeans', 'meanshift']
+    for clustering_algorithm in clustering_algorithms:
+        print clustering_algorithm_test(clustering=clustering_algorithm)
 
     # feature_extractors = [
     #     FeatureExtractorKeys.SIFT,
@@ -533,9 +526,7 @@ if __name__ == '__main__':
     # for feature_extractor in feature_extractors:
     #     print feature_extractor_test(feature_extractor=feature_extractor)
 
-    # print feature_extractor_test(feature_extractor=FeatureExtractorKeys.SKIMAGE_HOG_2)
-
     """ Based on the results of the above, lets build a codebook """
-    # build_cookbook_and_featurevectors_for_model_tuning()
+    build_cookbook_and_featurevectors_for_model_tuning()
 
-    sanity_check()
+    # sanity_check()

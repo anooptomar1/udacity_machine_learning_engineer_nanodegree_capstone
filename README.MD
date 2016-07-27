@@ -3,17 +3,29 @@
 ## Structure 
 
 ### Report 
-- Final_Report.pdf 
+- Final_Report.pdf
+
+### Running the project 
+1. Download the dataset from http://cybertron.cg.tu-berlin.de/eitz/projects/classifysketch/sketches_png.zip
+2. Unarchive the contents into the root folder where this project resides i.e. the extracted folder 'png' should be at the same level as this project (sketchrecognition)
+3. Change directory into the project directory
+4. Run 'python rebuild_models.py' to rebuild models and run the run the evaluation (which will reside in the results directory when complete)
 
 ### Implementation 
 - subset_labels.csv; subset of the data, used for training and testing 
-- test_set.json; defines the test set 
-- sketch_recognition_trainer.py; defines the bulk of the application from feature extraction to training
-- misc_utils.py; utility methods 
-- feature_extractors; Collection of feature extractors 
-- classifiers; classifier wrappers for sketch classification
-- tuning; model tuning classes 
-- evaluators; encapsulates evaluating the features and model
+- test_set.json; defines the test set
+
+- constants.py; set of global constants  
+- misc_utils.py; utility methods for IO and image loading and manipulation
+- sketch_recognition_trainer.py; wrapper for building the codebook and training the classifier 
+- feature_extractors.py; responsible for extracting the descriptors from a image 
+- sketch_classifier.py; set of classifier wrappers for classification
+- tuning; feature and model tuning classes
+-- tuning_helper.py; helper methods for tuning 
+-- feature_engineering_tuning.py; set of 'explorationary experiments' to observe the influence each feature property have on the performance
+-- model_tuning.py; similar to above but focusing on the performance of the classifier model
+-- replay.py; used to rebuild and confirm test results published in report  
+- evaluator.py; encapsulates evaluating the features and model
   
 - results; directory where evaluation results are written to 
 - data; output from the feature extraction and model building steps (including codebook) 

@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="372a1eb6-98e3-47a6-af18-a3283e76f6ad" name="Default" comment="" />
+    <list default="true" id="372a1eb6-98e3-47a6-af18-a3283e76f6ad" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rebuild_models.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifiers/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/evaluators/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/feature_extractors/brief_feature_extractor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/feature_extractors/hog_feature_extractor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/feature_extractors/sift_feature_extractor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/feature_extractors/skimage_hog_2_feature_extractor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/feature_extractors/skimage_hog_feature_extractor.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/classifiers/sketch_classifier.py" afterPath="$PROJECT_DIR$/sketch_classifier.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/evaluators/evaluator.py" afterPath="$PROJECT_DIR$/evaluator.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/feature_extractors/__init__.py" afterPath="$PROJECT_DIR$/constants.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/feature_extractors/feature_extractor.py" afterPath="$PROJECT_DIR$/feature_extractor.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/results/evaluation_results_GaussianNB.json" afterPath="$PROJECT_DIR$/results/model_tuning/evaluation_results_GaussianNB.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/results/evaluation_results_KNeighborsClassifier_neighors-10_weights-distance_metric-manhattan_algorithm-auto.json" afterPath="$PROJECT_DIR$/results/model_tuning/evaluation_results_KNeighborsClassifier_neighors-10_weights-distance_metric-manhattan_algorithm-auto.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/results/evaluation_results_LinearSVCSketchClassifier_C-18.7381742286_loss-squared_hinge.json" afterPath="$PROJECT_DIR$/results/model_tuning/evaluation_results_LinearSVCSketchClassifier_C-18.7381742286_loss-squared_hinge.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/results/evaluation_results_MultinomialNB.json" afterPath="$PROJECT_DIR$/results/model_tuning/evaluation_results_MultinomialNB.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/results/evaluation_results_SVCSketchClassifier_kernal-rbf_C-10.0_gamma-10.0.json" afterPath="$PROJECT_DIR$/results/model_tuning/evaluation_results_SVCSketchClassifier_kernal-rbf_C-10.0_gamma-10.0.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Final_Report.pdf" afterPath="$PROJECT_DIR$/Final_Report.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.MD" afterPath="$PROJECT_DIR$/README.MD" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/misc_utils.py" afterPath="$PROJECT_DIR$/misc_utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sketch_recognition_trainer.py" afterPath="$PROJECT_DIR$/sketch_recognition_trainer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuning/feature_engineering_tuning.py" afterPath="$PROJECT_DIR$/tuning/feature_engineering_tuning.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuning/model_tuning.py" afterPath="$PROJECT_DIR$/tuning/model_tuning.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuning/tuning_helper.py" afterPath="$PROJECT_DIR$/tuning/tuning_helper.py" />
+    </list>
     <ignored path="sketchrecognition.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,6 +51,7 @@
     <SUITE FILE_PATH="coverage/sketchrecognition$tt.coverage" NAME="tt Coverage Results" MODIFIED="1467790144475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sketchrecognition$skimage_hog_2_feature_extractor.coverage" NAME="skimage_hog_2_feature_extractor Coverage Results" MODIFIED="1467665466531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sketchrecognition$model_tuning.coverage" NAME="model_tuning Coverage Results" MODIFIED="1469435029079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tuning" />
+    <SUITE FILE_PATH="coverage/sketchrecognition$replay.coverage" NAME="replay Coverage Results" MODIFIED="1469656393094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tuning" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.MD" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.MD" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.MD">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+            <state relative-caret-position="315">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -48,11 +75,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <file leaf-file-name="sketch_classifier.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sketch_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="120">
+              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+              <folding>
+                <element signature="e#3557#6379#0" expanded="false" />
+                <element signature="e#6435#8967#0" expanded="false" />
+                <element signature="e#9040#13102#0" expanded="false" />
+                <element signature="e#13176#14052#0" expanded="false" />
+                <element signature="e#14123#14493#0" expanded="false" />
+                <element signature="e#14550#15045#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rebuild_models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rebuild_models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,7 +136,6 @@
         <option value="$PROJECT_DIR$/contous_anslysis/Template.py" />
         <option value="$PROJECT_DIR$/contous_anslysis/template_finder.py" />
         <option value="$PROJECT_DIR$/contous_anslysis/template.py" />
-        <option value="$PROJECT_DIR$/evaluator.py" />
         <option value="$PROJECT_DIR$/contous_anslysis/contour.py" />
         <option value="$PROJECT_DIR$/contous_anslysis/image_processor.py" />
         <option value="$PROJECT_DIR$/contous_anslysis/readme.txr" />
@@ -101,21 +144,28 @@
         <option value="$PROJECT_DIR$/sift_feature_extractor.py" />
         <option value="$PROJECT_DIR$/brief_feature_extractor.py" />
         <option value="$PROJECT_DIR$/tuning.py" />
-        <option value="$PROJECT_DIR$/feature_extractor.py" />
         <option value="$PROJECT_DIR$/skimage_hog_2_feature_extractor.py" />
         <option value="$PROJECT_DIR$/feature_engineering_tuning.py" />
-        <option value="$PROJECT_DIR$/sketch_classifier.py" />
         <option value="$PROJECT_DIR$/tuning/tuning_utils.py" />
         <option value="$PROJECT_DIR$/contous_anslysis/offline_trainer.py" />
-        <option value="$PROJECT_DIR$/tuning/feature_engineering_tuning.py" />
-        <option value="$PROJECT_DIR$/tuning/tuning_helper.py" />
-        <option value="$PROJECT_DIR$/feature_extractors/feature_extractor.py" />
-        <option value="$PROJECT_DIR$/sketch_recognition_trainer.py" />
-        <option value="$PROJECT_DIR$/tuning/model_tuning.py" />
         <option value="$PROJECT_DIR$/evaluators/evaluator.py" />
         <option value="$PROJECT_DIR$/classifiers/sketch_classifier.py" />
+        <option value="$PROJECT_DIR$/feature_extractors/sift_feature_extractor.py" />
+        <option value="$PROJECT_DIR$/feature_extractors/feature_extractor.py" />
+        <option value="$PROJECT_DIR$/tuning/model_tuning.py" />
+        <option value="$PROJECT_DIR$/tuning/feature_engineering_tuning.py" />
+        <option value="$PROJECT_DIR$/tuning/rebuild_data_files.py" />
+        <option value="$PROJECT_DIR$/tuning/replay.py" />
+        <option value="$PROJECT_DIR$/feature_extractor.py" />
+        <option value="$PROJECT_DIR$/replay.py" />
         <option value="$PROJECT_DIR$/misc_utils.py" />
+        <option value="$PROJECT_DIR$/evaluator.py" />
+        <option value="$PROJECT_DIR$/tuning/tuning_helper.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/sketch_recognition_trainer.py" />
         <option value="$PROJECT_DIR$/README.MD" />
+        <option value="$PROJECT_DIR$/sketch_classifier.py" />
+        <option value="$PROJECT_DIR$/rebuild_models.py" />
       </list>
     </option>
   </component>
@@ -126,8 +176,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="107" />
-    <option name="y" value="42" />
+    <option name="x" value="47" />
+    <option name="y" value="30" />
     <option name="width" value="1166" />
     <option name="height" value="768" />
   </component>
@@ -156,7 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,9 +225,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketchrecognition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketchrecognition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="results" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketchrecognition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketchrecognition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,36 +270,18 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results/model_tuning" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/results/feature_engineering_tuning" />
       <recent name="$PROJECT_DIR$/tuning" />
       <recent name="$PROJECT_DIR$/evaluators" />
-      <recent name="$PROJECT_DIR$/classifiers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.model_tuning">
-    <configuration default="false" name="sketch_recognition" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="sketchrecognition" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sketch_recognition_trainer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.replay">
     <configuration default="false" name="template_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,7 +349,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="sketchrecognition" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classifiers/sketch_classifier.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sketch_classifier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="replay" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tuning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="sketchrecognition" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rebuild_models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -514,19 +592,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.sketch_recognition" />
-      <item index="1" class="java.lang.String" itemvalue="Python.template_generator" />
-      <item index="2" class="java.lang.String" itemvalue="Python.misc_utils" />
-      <item index="3" class="java.lang.String" itemvalue="Python.model_tuning" />
-      <item index="4" class="java.lang.String" itemvalue="Python.sketch_classifier" />
+      <item index="0" class="java.lang.String" itemvalue="Python.template_generator" />
+      <item index="1" class="java.lang.String" itemvalue="Python.misc_utils" />
+      <item index="2" class="java.lang.String" itemvalue="Python.model_tuning" />
+      <item index="3" class="java.lang.String" itemvalue="Python.sketch_classifier" />
+      <item index="4" class="java.lang.String" itemvalue="Python.replay" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.model_tuning" />
-        <item index="1" class="java.lang.String" itemvalue="Python.sketch_classifier" />
-        <item index="2" class="java.lang.String" itemvalue="Python.template_generator" />
-        <item index="3" class="java.lang.String" itemvalue="Python.misc_utils" />
-        <item index="4" class="java.lang.String" itemvalue="Python.sketch_recognition" />
+        <item index="0" class="java.lang.String" itemvalue="Python.replay" />
+        <item index="1" class="java.lang.String" itemvalue="Python.model_tuning" />
+        <item index="2" class="java.lang.String" itemvalue="Python.sketch_classifier" />
+        <item index="3" class="java.lang.String" itemvalue="Python.template_generator" />
+        <item index="4" class="java.lang.String" itemvalue="Python.misc_utils" />
       </list>
     </recent_temporary>
   </component>
@@ -556,18 +634,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="107" y="42" width="1166" height="768" extended-state="0" />
+    <frame x="47" y="30" width="1166" height="768" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27046263" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27491105" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.295858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29498526" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3239645" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32300884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2928994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -612,23 +690,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/feature_extractors/skimage_hog_2_feature_extractor.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/feature_extractors/skimage_hog_2_feature_extractor.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/evaluators/evaluator.py</url>
-          <line>79</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -639,47 +700,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="96" />
+      <option name="time" value="99" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/results/feature_engineering_tuning/results_extractor-sift_clusters-800_winratio-0.125_trainingsize-8136_classes-113_features-324_201607110908.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/feature_engineering_tuning/results_extractor-sift_clusters-600_winratio-0.125_trainingsize-8136_classes-113_features-324_201607102146.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/feature_engineering_tuning/results_extractor-sift_clusters-500_winratio-0.125_trainingsize-8136_classes-113_features-324.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="0" column="497" selection-start-line="0" selection-start-column="483" selection-end-line="0" selection-end-column="497" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/multiprocessing/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_set.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/sklearn/utils/validation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -687,13 +712,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/queue.py" />
     <entry file="file://$PROJECT_DIR$/feature_extractors/brief_feature_extractor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -801,13 +820,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contous_anslysis/offline_trainer.py" />
-    <entry file="file://$PROJECT_DIR$/data/train_image_labels_v1.npy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/train_image_labels_v1.npy" />
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -816,39 +829,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tuning/feature_engineering_tuning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="447" column="19" selection-start-line="447" selection-start-column="19" selection-end-line="447" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/-365244855/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="4304" column="8" selection-start-line="4304" selection-start-column="8" selection-end-line="4304" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feature_extractors/sift_feature_extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tuning/tuning_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="53" column="43" selection-start-line="43" selection-start-column="4" selection-end-line="53" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feature_extractors/feature_extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -867,50 +852,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results/evaluation_results_SVCSketchClassifier_kernal-rbf_gamma-auto_coef0-0.0_degree-3.json" />
-    <entry file="file://$PROJECT_DIR$/results/evaluation_results_LinearSVCSketchClassifier.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="0" column="672" selection-start-line="0" selection-start-column="664" selection-end-line="0" selection-end-column="672" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/evaluation_results_LinearSVCSketchClassifier.json" />
     <entry file="file://$PROJECT_DIR$/results/evaluation_results_SVCSketchClassifier_kernal-_C-0.0_gamma-0.0.json" />
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/sklearn/cluster/k_means_.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="1157" column="57" selection-start-line="1156" selection-start-column="22" selection-end-line="1157" selection-end-column="57" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sketch_recognition_trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="331" column="34" selection-start-line="331" selection-start-column="34" selection-end-line="331" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-            <element signature="e#1691#1721#0" expanded="false" />
-            <element signature="e#1757#1859#0" expanded="false" />
-            <element signature="e#1897#1962#0" expanded="false" />
-            <element signature="e#5354#5620#0" expanded="false" />
-            <element signature="e#5676#5814#0" expanded="false" />
-            <element signature="e#5892#6429#0" expanded="false" />
-            <element signature="e#7110#7234#0" expanded="false" />
-            <element signature="e#7308#7486#0" expanded="false" />
-            <element signature="e#7558#7649#0" expanded="false" />
-            <element signature="e#8186#8789#0" expanded="false" />
-            <element signature="e#9637#9830#0" expanded="false" />
-            <element signature="e#9871#10061#0" expanded="false" />
-            <element signature="e#10137#10323#0" expanded="false" />
-            <element signature="e#14692#14836#0" expanded="false" />
-            <element signature="e#14934#15566#0" expanded="false" />
-            <element signature="e#15672#16312#0" expanded="false" />
-            <element signature="e#16420#17058#0" expanded="false" />
-            <element signature="e#17157#17830#0" expanded="false" />
-            <element signature="e#17932#18663#0" expanded="false" />
-            <element signature="e#18738#19727#0" expanded="false" />
-            <element signature="e#20808#20977#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -926,7 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,68 +885,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evaluators/evaluator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="209" column="16" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tuning/model_tuning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#27#0" expanded="false" />
-            <marker date="1469384060000" expanded="true" signature="2990:3835" ph="..." />
-            <marker date="1469384060000" expanded="true" signature="3030:3690" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/evaluation_results_KNeighborsClassifier_neighors-10_weights-distance_metric-manhattan_algorithm-auto.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="0" column="50497" selection-start-line="0" selection-start-column="50488" selection-end-line="0" selection-end-column="50497" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/evaluation_results_LinearSVCSketchClassifier_C-18.7381742286_loss-squared_hinge.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="0" column="50303" selection-start-line="0" selection-start-column="50283" selection-end-line="0" selection-end-column="50303" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classifiers/sketch_classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="100" column="0" selection-start-line="99" selection-start-column="42" selection-end-line="100" selection-end-column="0" />
-          <folding>
-            <element signature="e#418#2552#0" expanded="false" />
-            <element signature="e#6334#9729#0" expanded="false" />
-            <element signature="e#9729#9796#0" expanded="false" />
-            <element signature="e#12614#17009#0" expanded="false" />
-            <element signature="e#17083#18037#0" expanded="false" />
-            <element signature="e#18108#18554#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/misc_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1 - Problem Definition.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3 - Training (Model selection and tuning) and Evaluation.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
@@ -1014,14 +907,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3 - Training (Model selection and tuning) and Evaluation.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
+    <entry file="file://$PROJECT_DIR$/feature_extractors/sift_feature_extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/evaluation_results_SVCSketchClassifier_kernal-rbf_C-10.0_gamma-10.0.json">
+    <entry file="file://$PROJECT_DIR$/tuning/feature_engineering_tuning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="48" column="28" selection-start-line="25" selection-start-column="4" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature_extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#67#78#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+          <folding>
+            <element signature="e#1#24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="206" column="78" selection-start-line="206" selection-start-column="78" selection-end-line="206" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuning/tuning_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuning/model_tuning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/params_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch_recognition_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-223">
+          <caret line="519" column="35" selection-start-line="519" selection-start-column="35" selection-end-line="519" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#786#907#0" expanded="false" />
+            <element signature="e#944#974#0" expanded="false" />
+            <element signature="e#1010#1112#0" expanded="false" />
+            <element signature="e#1164#1229#0" expanded="false" />
+            <element signature="e#1324#1851#0" expanded="false" />
+            <element signature="e#1955#4238#0" expanded="false" />
+            <element signature="e#4306#4572#0" expanded="false" />
+            <element signature="e#4628#4980#0" expanded="false" />
+            <element signature="e#5058#5758#0" expanded="false" />
+            <element signature="e#5834#6575#0" expanded="false" />
+            <element signature="e#6616#6848#0" expanded="false" />
+            <element signature="e#7306#7522#0" expanded="false" />
+            <element signature="e#7583#7864#0" expanded="false" />
+            <element signature="e#7923#8113#0" expanded="false" />
+            <element signature="e#8363#8705#0" expanded="false" />
+            <element signature="e#9279#9472#0" expanded="false" />
+            <element signature="e#9513#9703#0" expanded="false" />
+            <element signature="e#9779#10220#0" expanded="false" />
+            <element signature="e#10318#11910#0" expanded="false" />
+            <element signature="e#15091#15316#0" expanded="false" />
+            <element signature="e#15422#15939#0" expanded="false" />
+            <element signature="e#16047#16566#0" expanded="false" />
+            <element signature="e#16683#17210#0" expanded="false" />
+            <element signature="e#17329#17850#0" expanded="false" />
+            <element signature="e#18637#19292#0" expanded="false" />
+            <element signature="e#19367#20356#0" expanded="false" />
+            <marker date="1469649412000" expanded="false" signature="17950:18525" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/model_tuning/evaluation_results_GaussianNB.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/model_tuning/evaluation_results_KNeighborsClassifier_neighors-10_weights-distance_metric-manhattan_algorithm-auto.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="0" column="50497" selection-start-line="0" selection-start-column="50488" selection-end-line="0" selection-end-column="50497" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/model_tuning/evaluation_results_LinearSVCSketchClassifier_C-18.7381742286_loss-squared_hinge.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="0" column="50303" selection-start-line="0" selection-start-column="50283" selection-end-line="0" selection-end-column="50303" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/model_tuning/evaluation_results_MultinomialNB.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/model_tuning/evaluation_results_SVCSketchClassifier_kernal-rbf_C-10.0_gamma-10.0.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="0" column="494" selection-start-line="0" selection-start-column="489" selection-end-line="0" selection-end-column="494" />
@@ -1034,8 +1073,31 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+        <state relative-caret-position="315">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+          <folding>
+            <element signature="e#3557#6379#0" expanded="false" />
+            <element signature="e#6435#8967#0" expanded="false" />
+            <element signature="e#9040#13102#0" expanded="false" />
+            <element signature="e#13176#14052#0" expanded="false" />
+            <element signature="e#14123#14493#0" expanded="false" />
+            <element signature="e#14550#15045#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rebuild_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,13 +1,9 @@
-from tuning_helper import *
-from evaluators.evaluator import Evaluator
-from sketch_recognition_trainer import FeatureExtractorKeys
-from sketch_recognition_trainer import MeanShiftSketchRecognitionTrainer
-from sketch_recognition_trainer import ParamKeys
-from sketch_recognition_trainer import SketchRecognitionTrainer
-from sketch_recognition_trainer import SketchRecognitionClassifier
-import numpy as np
 import time
-from classifiers.sketch_classifier import *
+
+from evaluator import Evaluator
+from sketch_classifier import *
+from sketch_recognition_trainer import SketchRecognitionClassifier
+from tuning_helper import *
 
 
 def evaluate_classifiers(classifiers):
@@ -18,7 +14,6 @@ def evaluate_classifiers(classifiers):
     params = build_params(num_classes=len(selected_labels),
                           training_size=len(train_images),
                           test_size=len(test_images),
-                          feature_extractor=FeatureExtractorKeys.SIFT,
                           window_resolution=0.125,
                           window_overlap=2.5,
                           num_clusters=400,
@@ -80,26 +75,26 @@ def evaluate_classifier(clf_wrapper,
 if __name__ == '__main__':
     print __file__
 
+    version = "1"
+
     classifiers = [
-        # MultinomialNaiveBayesSketchClassifier(
-        #     filename="../data/MultinomialNaiveBayesSketchClassifier_1.dat"
-        # ),
-        # GaussianNaiveBayesSketchClassifier(
-        #     filename="../data/GaussianNaiveBayesSketchClassifier_1.dat"
-        # ),
-        # KNeighborsClassifierSketchClassifier(
-        #     filename="../data/KNeighborsClassifierSketchClassifier_Grid_1.dat",
-        #     n_neighbors=10
-        # ),
-        # SVCSketchClassifier(
-        #     filename="../data/SVCSketchClassifier_1.dat"
-        # ),
+        MultinomialNaiveBayesSketchClassifier(
+            filename="../data/MultinomialNaiveBayesSketchClassifier_{}.dat".format(version)
+        ),
+        GaussianNaiveBayesSketchClassifier(
+            filename="../data/GaussianNaiveBayesSketchClassifier_{}.dat".format(version)
+        ),
+        KNeighborsClassifierSketchClassifier(
+            filename="../data/KNeighborsClassifierSketchClassifier_Grid_{}.dat".format(version),
+            n_neighbors=10
+        ),
+        SVCSketchClassifier(
+            filename="../data/SVCSketchClassifier_{}.dat".format(version)
+        ),
         LinearSVCSketchClassifier(
-            filename="../data/LinearSVCSketchClassifier_1.dat"
+            filename="../data/LinearSVCSketchClassifier_{}.dat".format(version)
         )
     ]
-
-    #evaluate_classifier(LinearSVCSketchClassifier(filename="../data/LinearSVCSketchClassifier_1.dat"))
 
     evaluate_classifiers(classifiers)
 

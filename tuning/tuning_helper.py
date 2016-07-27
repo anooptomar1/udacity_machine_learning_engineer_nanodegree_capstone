@@ -3,32 +3,22 @@ import os
 import random
 
 import misc_utils
+from constants import *
 from sketch_recognition_trainer import ClassifierKeys
-from sketch_recognition_trainer import FeatureExtractorKeys
 from sketch_recognition_trainer import ParamKeys
 
-TRAIN_FEATURES_FILENAME = "../data/training_image_feature_vectors.npy"
-TRAIN_COOKBOOK_FILENAME = "../data/train_codebook_v1.dat"
-TRAIN_CODE_LABELS_FILENAME = "../data/train_image_codelabels_v1.npy"
-TRAIN_LABELS_FILENAME = "../data/train_image_labels_v1.npy"
 
-
-def build_params(num_classes, training_size, test_size,
-                 feature_extractor=FeatureExtractorKeys.SIFT,
-                 feature_count=324, cell_resolution=4,
+def build_params(training_size, test_size,
+                 num_classes=0,
                  window_resolution=0.125, window_overlap=2.0,
                  num_clusters=400,
-                 classifier=ClassifierKeys.SVM,
+                 classifier=ClassifierKeys.Best,
                  image_size=256,
                  fn_prefix=None, fn_postfix=None):
     """
-    TODO: describe parameters and their effect on the feature extractor
-    :param num_classes:
+    builder for params
     :param training_size:
     :param test_size:
-    :param feature_extractor:
-    :param feature_count:
-    :param cell_resolution:
     :param window_resolution:
     :param window_overlap:
     :param num_clusters:
@@ -40,16 +30,12 @@ def build_params(num_classes, training_size, test_size,
     """
 
     params = dict()
-
-    params[ParamKeys.FEATURE_EXTRACTOR] = feature_extractor
-    params[ParamKeys.FEATURE_COUNT] = feature_count
-    params[ParamKeys.CELL_RESOLUTION] = cell_resolution
+    params[ParamKeys.NUM_CLASSES] = num_classes
     params[ParamKeys.WINDOW_RATIO] = window_resolution
     params[ParamKeys.WINDOW_OVERLAP] = window_overlap
     params[ParamKeys.NUM_CLUSTERS] = num_clusters
     params[ParamKeys.CLASSIFIER] = classifier
     params[ParamKeys.IMAGE_SIZE] = image_size
-    params[ParamKeys.NUM_CLASSES] = num_classes
     params[ParamKeys.TRAINING_SIZE] = training_size
     params[ParamKeys.TEST_SIZE] = test_size
 

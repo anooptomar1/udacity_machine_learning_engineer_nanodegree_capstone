@@ -1,14 +1,17 @@
-
 import os
 import cv2
 import re
 import time
+from constants import *
 
 
 class MiscUtils(object):
+    """
+    A set of miscellaneous methods for handling IO and image loading and manipulation
+    """
 
     @staticmethod
-    def get_sub_directories(root_path="../png"):
+    def get_sub_directories(root_path=DEFAULT_IMAGE_ROOT):
         sub_dirs = []
         for root, dir_names, _ in os.walk("{}".format(root_path)):
             for dir_name in dir_names:
@@ -24,16 +27,20 @@ class MiscUtils(object):
         return cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
 
     @staticmethod
-    def load_images(root_path="../png",
+    def load_images(root_path=DEFAULT_IMAGE_ROOT,
                     subdir_names=[],
                     perfrom_crop_and_rescale_image=True,
                     subdir_image_limit=-1):
+        """
+        :param root_path: where the root directory of the images resides (expecting structure: <root>/<subdir_name>/images
+        :param subdir_names: expecting dir of directory names
+        :param perfrom_crop_and_rescale_image: boolean indicating if cropping and uniform rescaling is required
+        :param subdir_image_limit: how many images to load from each sub-directory (-1 == all)
+        :return: list of loaded images
+        """
 
         start_time = time.time()
 
-        """
-        subdir_names; expecting dir of directory names
-        """
         images = []
         labels = []
 
@@ -64,7 +71,8 @@ class MiscUtils(object):
     @staticmethod
     def crop_and_rescale_image(image, size=256):
         """
-        crop and resize image
+        crop and resize image, clip to the max bounding box of the image and perform a uniform rescale
+        of the image
         """
 
         bbox = {
@@ -137,8 +145,17 @@ class MiscUtils(object):
                 cv2.waitKey()
 
     @staticmethod
-    def training_test_split(root_path="../png", subdir_names=[], perfrom_crop_and_rescale_image=True,
+    def training_test_split(root_path=DEFAULT_IMAGE_ROOT, subdir_names=[], perfrom_crop_and_rescale_image=True,
                             subdir_image_limit=-1, train_test_split=0.8):
+        """
+        load the images and split them into a training and test set
+        :param root_path:
+        :param subdir_names:
+        :param perfrom_crop_and_rescale_image:
+        :param subdir_image_limit:
+        :param train_test_split:
+        :return:
+        """
 
         start_time = time.time()
 
@@ -165,7 +182,7 @@ class MiscUtils(object):
         return train_labels, train_images, test_labels, test_images
 
     @staticmethod
-    def crop_and_rescale_images(source_path="../png", dest_path="../processed_png"):
+    def crop_and_rescale_images(source_path=DEFAULT_IMAGE_ROOT, dest_path=DEFAULT_PROCESSED_IMAGE_ROOT):
         start_time = time.time()
 
         subdir_names = MiscUtils.get_sub_directories()[:]
@@ -189,8 +206,4 @@ class MiscUtils(object):
 
         print 'function crop_and_rescale_images took %0.3f ms' % (et * 1000.0)
 
-if __name__ == '__main__':
-    print __file__
-
-    print os.listdir("../")
 
