@@ -19,13 +19,17 @@ def evaluate_classifiers(classifiers):
                           num_clusters=400,
                           image_size=256)
 
-    sketch_classifier = SketchRecognitionClassifier()
-    sketch_classifier.load_clustering_and_cookbook_from_file(TRAIN_COOKBOOK_FILENAME)
+    # params_filename, cookbook_filename, classifier_filename
+    sketch_classifier = SketchRecognitionClassifier(
+        params_filename=TRAINED_PARAMS_FILENAME,
+        cookbook_filename=TRAINED_COOKBOOK_FILENAME,
+        classifier_filename=None
+    )
 
-    train_images_codelabels = np.load(TRAIN_CODE_LABELS_FILENAME)
+    if not os.path.exists(TRAINED_CODELABELS_FILENAME):
+        raise Exception('No codelabels created for training dataset')
 
-    # to ensure consistency
-    train_labels = np.load(TRAIN_LABELS_FILENAME)
+    train_images_codelabels = np.load(TRAINED_CODELABELS_FILENAME)
 
     print "creating codelabels for test images"
     test_images_codelabels = sketch_classifier.code_labels_for_image_descriptors(
@@ -56,11 +60,11 @@ def evaluate_classifier(clf_wrapper,
 
     # evaluate
     print "proceeding to evaluate classifier on test set {}".format(len(test_labels))
-    encoded_test_labels = clf_wrapper.le.transform(test_labels)
+    encoded_test_labels = clf_wrapper.label_encoder.transform(test_labels)
 
     evaluator = Evaluator(
         clf=clf_wrapper.clf,
-        label_encoder=clf_wrapper.le,
+        label_encoder=clf_wrapper.label_encoder,
         params=params,
         output_filepath="../results/evaluation_results_{}.json".format(clf_wrapper)
     )
@@ -75,25 +79,25 @@ def evaluate_classifier(clf_wrapper,
 if __name__ == '__main__':
     print __file__
 
-    version = "1"
+    version = "2"
 
     classifiers = [
-        MultinomialNaiveBayesSketchClassifier(
-            filename="../data/MultinomialNaiveBayesSketchClassifier_{}.dat".format(version)
-        ),
-        GaussianNaiveBayesSketchClassifier(
-            filename="../data/GaussianNaiveBayesSketchClassifier_{}.dat".format(version)
-        ),
+        # MultinomialNaiveBayesSketchClassifier(
+        #     filename="../data/MultinomialNaiveBayesSketchClassifier_{}.dat".format(version)
+        # ),
+        # GaussianNaiveBayesSketchClassifier(
+        #     filename="../data/GaussianNaiveBayesSketchClassifier_{}.dat".format(version)
+        # ),
         KNeighborsClassifierSketchClassifier(
             filename="../data/KNeighborsClassifierSketchClassifier_Grid_{}.dat".format(version),
             n_neighbors=10
         ),
-        SVCSketchClassifier(
-            filename="../data/SVCSketchClassifier_{}.dat".format(version)
-        ),
-        LinearSVCSketchClassifier(
-            filename="../data/LinearSVCSketchClassifier_{}.dat".format(version)
-        )
+        # SVCSketchClassifier(
+        #     filename="../data/SVCSketchClassifier_{}.dat".format(version)
+        # ),
+        # LinearSVCSketchClassifier(
+        #     filename="../data/LinearSVCSketchClassifier_{}.dat".format(version)
+        # )
     ]
 
     evaluate_classifiers(classifiers)

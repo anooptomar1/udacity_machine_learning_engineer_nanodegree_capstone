@@ -48,7 +48,7 @@ def build_params(training_size, test_size,
     return params
 
 
-def load_labels(filename="../subset_labels.csv"):
+def load_labels(filename=SUBSET_LABELS_FILENAME):
     labels = []
     import csv
     with open(filename, "r") as f:
@@ -59,7 +59,7 @@ def load_labels(filename="../subset_labels.csv"):
     return labels
 
 
-def split_data(labels, images, test_set_filename="../test_set.json", test_set_size=8):
+def split_data(labels, images, test_set_filename=TEST_SET_FILENAME, test_set_size=8):
     test_details = None
 
     if os.path.isfile(test_set_filename):
@@ -106,12 +106,41 @@ def split_data(labels, images, test_set_filename="../test_set.json", test_set_si
 def get_training_and_test_data():
     selected_labels = load_labels()
 
-    labels, images = misc_utils.MiscUtils.load_images(root_path="../../processed_png",
+    labels, images = misc_utils.MiscUtils.load_images(root_path=DEFAULT_PROCESSED_IMAGE_ROOT,
                                                       subdir_names=selected_labels,
                                                       subdir_image_limit=0,
                                                       perfrom_crop_and_rescale_image=False)
 
     train_labels, train_images, test_labels, test_images = split_data(labels=labels, images=images)
+
+    return train_labels, train_images, test_labels, test_images
+
+
+def get_training_and_test_data_b():
+    selected_labels_for_a = load_labels(filename=SUBSET_LABELS_FILENAME)
+
+    num_of_classes = len(selected_labels_for_a) # keep them the same size to make them (easily) comparable
+
+    all_labels = misc_utils.MiscUtils.get_sub_directories(root_path=DEFAULT_PROCESSED_IMAGE_ROOT)
+
+    selected_labels = []
+    while len(selected_labels) < num_of_classes:
+        #label_index = all_labels.index(random.choice(all_labels))
+        label = random.choice(all_labels)
+        all_labels.remove(label)
+
+        if label not in selected_labels_for_a:
+            selected_labels.append(label)
+
+    labels, images = misc_utils.MiscUtils.load_images(root_path=DEFAULT_PROCESSED_IMAGE_ROOT,
+                                                      subdir_names=selected_labels,
+                                                      subdir_image_limit=0,
+                                                      perfrom_crop_and_rescale_image=False)
+
+    train_labels, train_images, test_labels, test_images = split_data(
+        labels=labels,
+        images=images,
+        test_set_filename=TEST_SETB_FILENAME)
 
     return train_labels, train_images, test_labels, test_images
 

@@ -58,7 +58,7 @@ class DenseFeatureExtractor(BaseFeatureExtractor):
         if params is not None and ParamKeys.WINDOW_OVERLAP in params:
             self.window_overlap = float(params[ParamKeys.WINDOW_OVERLAP])
         else:
-            self.window_overlap = 2.
+            self.window_overlap = 2.5
 
         self.step_size = int(self.image_size * self.window_ratio / self.window_overlap)
         self.feature_scale = int(self.image_size * self.window_ratio)
@@ -105,14 +105,33 @@ class SiftFeatureExtractor(DenseFeatureExtractor):
 if __name__ == '__main__':
     print(__file__)
 
-    test_image = ""
+    import numpy as np
+
+    #test_image = "../processed_png/airplane/airplane_0.png"
+    test_image = "../processed_png/face/face_0.png"
 
     input_image = cv2.imread(test_image)
     input_image_sift = np.copy(input_image)
     gray_image = cv2.cvtColor(input_image, cv2.COLOR_BGR2GRAY)
 
-    # keypoints = SiftFeatureExtractor(None).extract_keypoints(gray_image)
-    # print "keypoints len {}".format(len(keypoints))
-    # input_image = cv2.drawKeypoints(input_image, keypoints, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-    # cv2.imshow('Dense feature detector', input_image)
-    # cv2.waitKey()
+    fe = SiftFeatureExtractor(None)
+    keypoints = fe._extract_keypoints(gray_image)
+    print "keypoints len {}".format(len(keypoints))
+    #input_image = cv2.drawKeypoints(input_image, keypoints, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+    one_added = False
+    for kp in keypoints:
+        cx = int(kp.pt[0])
+        cy = int(kp.pt[1])
+
+        x = cx - (fe.feature_scale/2)
+        y = cy - (fe.feature_scale / 2)
+        x2 = x + fe.feature_scale
+        y2 = y + fe.feature_scale
+
+        #tmp = cv2.rectangle(input_image, (int(x), int(y)), (int(x2), int(y2)), 0, 1)
+        tmp = cv2.circle(input_image, (cx, cy), 2, (0, 0, 255), -1)
+
+
+    cv2.imshow('Dense feature detector', input_image)
+    cv2.waitKey()

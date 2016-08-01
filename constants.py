@@ -6,20 +6,27 @@ def get_full_file_path(file_path):
 
 DEFAULT_IMAGE_ROOT = get_full_file_path("../png")
 
-DEFAULT_PROCESSED_IMAGE_ROOT = get_full_file_path("../processed")
+DEFAULT_PROCESSED_IMAGE_ROOT = get_full_file_path("../processed_png")
 
 DEFAULT_DATA_ROOT = get_full_file_path("data/")
 
 DEFAULT_RESULTS_ROOT = get_full_file_path("results/")
 
-TRAIN_FEATURES_FILENAME = get_full_file_path("data/training_image_feature_vectors.npy")
+#TRAIN_FEATURES_FILENAME = get_full_file_path("data/training_image_feature_vectors.npy")
 
-TRAIN_COOKBOOK_FILENAME = get_full_file_path("data/train_codebook_v1.dat")
+TRAINED_PARAMS_FILENAME = get_full_file_path("data/params_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat")
 
-TRAIN_CODE_LABELS_FILENAME = get_full_file_path("data/train_image_codelabels_v1.npy")
+TRAINED_COOKBOOK_FILENAME = get_full_file_path("data/cookbook_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat")
 
-TRAIN_LABELS_FILENAME = get_full_file_path("data/train_image_labels_v1.npy")
+TRAINED_CODELABELS_FILENAME = get_full_file_path("data/codelabels_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.npy")
 
+TRAINED_CLASSIFIER_FILENAME = get_full_file_path("data/classifier-best_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat")
+
+SUBSET_LABELS_FILENAME = get_full_file_path("subset_labels.csv")
+SUBSETB_LABELS_FILENAME = get_full_file_path("subset_b_labels.csv")
+
+TEST_SET_FILENAME = get_full_file_path("test_set.json")
+TEST_SETB_FILENAME = get_full_file_path("test_set_b.json")
 
 class ClassifierKeys(object):
     SVM = "svm"

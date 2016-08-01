@@ -358,6 +358,9 @@ class KNeighborsClassifierSketchClassifier(BaseSketchClassifier):
         if "metric" in best_params:
             self.metric = best_params["metric"]
 
+        if "n_neighbors" in best_params:
+            self.n_neighbors = best_params["n_neighbors"]
+
         print "best_params_: {}".format(best_params)
 
     def build_classifier(self):
@@ -401,13 +404,16 @@ class KNeighborsClassifierSketchClassifier(BaseSketchClassifier):
         http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV
         """
 
+        n_neighbors_values = [5, 10, 15, 20, 25]
         distance_metrics_values = ['minkowski', 'euclidean', 'manhattan']
         weights_values = ["uniform", "distance"]
 
-        param_grid = dict(weights=weights_values, metric=distance_metrics_values)
+        param_grid = dict(n_neighbors=n_neighbors_values,
+                          weights=weights_values,
+                          metric=distance_metrics_values)
 
         clf = GridSearchCV(
-            neighbors.KNeighborsClassifier(self.n_neighbors, n_jobs=-1),
+            neighbors.KNeighborsClassifier(n_jobs=-1),
             param_grid=param_grid,
             verbose=5
         )

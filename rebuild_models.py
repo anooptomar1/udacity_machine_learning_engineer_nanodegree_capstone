@@ -10,11 +10,8 @@ from tuning.tuning_helper import *
 from misc_utils import MiscUtils
 from constants import *
 
-if __name__ == '__main__':
-    print __file__
 
-    train_labels, train_images, test_labels, test_images = get_training_and_test_data()
-
+def rebuild(train_labels, train_images, test_labels, test_images, params_prefix=None):
     selected_labels = list(set(train_labels))
 
     params = build_params(
@@ -26,6 +23,9 @@ if __name__ == '__main__':
         num_clusters=400,
         image_size=256
     )
+
+    if params_prefix is not None:
+        params["prefix"] = params_prefix
 
     trainer = SketchRecognitionTrainer(
         file_path=SketchRecognitionTrainer.get_cookbook_filename_for_params(params=params),
@@ -55,3 +55,24 @@ if __name__ == '__main__':
     evaluation_results = evaluator.evaluate(X=test_images_codelabels, y=encoded_test_labels)
 
     print evaluation_results
+
+
+def rebuild_with_subset():
+    print("=== rebuild_with_subset ===")
+
+    train_labels, train_images, test_labels, test_images = get_training_and_test_data()
+
+    rebuild(train_labels, train_images, test_labels, test_images)
+
+def rebuild_with_subset_b():
+    print("=== rebuild_with_subset_b ===")
+
+    train_labels, train_images, test_labels, test_images = get_training_and_test_data_b()
+
+    rebuild(train_labels, train_images, test_labels, test_images, "leaveout")
+
+if __name__ == '__main__':
+    print __file__
+
+    rebuild_with_subset_b()
+

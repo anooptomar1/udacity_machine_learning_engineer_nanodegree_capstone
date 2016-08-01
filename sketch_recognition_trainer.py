@@ -196,7 +196,7 @@ class BaseSketchRecognition(object):
 
         labels = self.clustering.predict(image_descriptor)
 
-        feature_vector = np.zeros(self.num_clusters)
+        feature_vector = np.zeros(self.params['num_clusters'])
 
         for i, item in enumerate(image_descriptor):
             feature_vector[labels[i]] += 1
@@ -519,7 +519,7 @@ class SketchRecognitionTrainer(BaseSketchRecognition):
     @staticmethod
     def get_training_codelabels_filename_for_params(root=DEFAULT_DATA_ROOT, params=None):
 
-        filename = "cooklabels_clusters-{}_winratio-{}_winoverlap-{}_trainingsize-{}".format(
+        filename = "codelabels_clusters-{}_winratio-{}_winoverlap-{}_trainingsize-{}".format(
             params[ParamKeys.NUM_CLUSTERS],
             params[ParamKeys.WINDOW_RATIO],
             params[ParamKeys.WINDOW_OVERLAP],
@@ -610,8 +610,8 @@ class SketchRecognitionClassifier(BaseSketchRecognition):
 
         self.params = {}
 
-        if params_filename is None or cookbook_filename is None or classifier_filename is None:
-            raise Exception('Instance requires params_filename, cookbook_filename and classifier_filename')
+        if params_filename is None or cookbook_filename is None:
+            raise Exception('Instance requires params_filename, cookbook_filename')
 
         if not self.load_params(filename=params_filename):
             raise Exception('Instance requires valid params file')
@@ -619,8 +619,9 @@ class SketchRecognitionClassifier(BaseSketchRecognition):
         if not self.load_clustering_and_cookbook_from_file(filename=cookbook_filename):
             raise Exception('Instance requires valid cookbook file')
 
-        if not self.load_classifier_from_file(filename=classifier_filename):
-            raise Exception('Instance requires valid classifier file')
+        if classifier_filename is not None:
+            if not self.load_classifier_from_file(filename=classifier_filename):
+                raise Exception('Instance requires valid classifier file')
 
         self.feature_extractor = self.create_feature_extractor()
 
@@ -634,6 +635,15 @@ class SketchRecognitionClassifier(BaseSketchRecognition):
             self.params = loaded_params
 
         return True
+
+    def get_train_labels(self):
+        if self.classifier is None:
+            return None
+
+        if self.classifier.label_encoder is None:
+            return None
+
+        return self.classifier.label_encoder.classes_
 
     def create_feature_extractor(self):
         return SiftFeatureExtractor(self.params)
