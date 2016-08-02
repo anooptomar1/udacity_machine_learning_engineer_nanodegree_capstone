@@ -15,12 +15,15 @@ DEFAULT_RESULTS_ROOT = get_full_file_path("results/")
 #TRAIN_FEATURES_FILENAME = get_full_file_path("data/training_image_feature_vectors.npy")
 
 TRAINED_PARAMS_FILENAME = get_full_file_path("data/params_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat")
-
 TRAINED_COOKBOOK_FILENAME = get_full_file_path("data/cookbook_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat")
-
 TRAINED_CODELABELS_FILENAME = get_full_file_path("data/codelabels_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.npy")
-
 TRAINED_CLASSIFIER_FILENAME = get_full_file_path("data/classifier-best_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-8136.dat")
+
+WEB_PARAMS_FILENAME = get_full_file_path("data/web_params_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-11900.dat")
+WEB_COOKBOOK_FILENAME = get_full_file_path("data/web_cookbook_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-11900.dat")
+WEB_CODELABELS_FILENAME = get_full_file_path("data/web_codelabels_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-11900.npy")
+WEB_CLASSIFIER_FILENAME = get_full_file_path("data/web_classifier-best_clusters-400_winratio-0.125_winoverlap-2.5_trainingsize-11900.dat")
+
 
 SUBSET_LABELS_FILENAME = get_full_file_path("subset_labels.csv")
 SUBSETB_LABELS_FILENAME = get_full_file_path("subset_b_labels.csv")

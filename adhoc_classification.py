@@ -2,7 +2,7 @@
 from evaluator import Evaluator
 from sketch_classifier import *
 from sketch_recognition_trainer import SketchRecognitionClassifier
-from tuning_helper import *
+from misc_utils import MiscUtils
 
 
 def get_sketch_recogniser():
@@ -12,8 +12,23 @@ def get_sketch_recogniser():
         classifier_filename=TRAINED_CLASSIFIER_FILENAME
     )
 
+    # return SketchRecognitionClassifier(
+    #     params_filename=WEB_PARAMS_FILENAME,
+    #     cookbook_filename=WEB_COOKBOOK_FILENAME,
+    #     classifier_filename=WEB_CLASSIFIER_FILENAME
+    # )
+
 
 if __name__ == '__main__':
     print __file__
 
-    train_labels, train_images, test_labels, test_images = get_training_and_test_data()
+    sr = get_sketch_recogniser()
+
+    test_image = "../png/bicycle/1684.png"
+    test_image_2 = "../png/face/6241.png"
+    img = MiscUtils.crop_and_rescale_image(MiscUtils.load_image(test_image))
+    img2 = MiscUtils.crop_and_rescale_image(MiscUtils.load_image(test_image_2))
+
+    print sr.predict([img, img2])
+
+

@@ -96,13 +96,18 @@ class BaseSketchClassifier(object):
         labels_words = self.label_encoder.inverse_transform([int(x) for x in labels_nums])
         return labels_words, labels_nums
 
-    def prob(self, X):
+    def prob(self, X, threshold=0.1):
         X = np.asarray(X)
         labels_nums = self.clf.predict_proba(X)
         probabilities = [
             [(self.label_encoder.inverse_transform(int(x)), labels_nums_item[x]) for x in range(len(labels_nums_item))]
             for labels_nums_item in labels_nums]
-        return probabilities, labels_nums
+
+        for i in range(len(probabilities)):
+            probabilities[i] = filter(lambda x: x[1] >= threshold, probabilities[i])
+            probabilities[i].sort(key=lambda x: x[1], reverse=True)
+
+        return probabilities
 
     def build_classifier(self):
         raise Exception("build_classifier not implemented")

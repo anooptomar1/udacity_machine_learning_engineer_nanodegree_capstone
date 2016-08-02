@@ -131,9 +131,9 @@ class BaseSketchRecognition(object):
 
             image_descriptors = [item[1] for item in image_descriptors_tuples]
         else:
-            image_descriptors = self.feature_extractor.compute(images[0])
+            image_descriptors = []
 
-            for idx in range(1, len(images)):
+            for idx in range(0, len(images)):
                 image = images[idx]
                 descriptors = self.feature_extractor.compute(image)
                 image_descriptors.append(descriptors)
@@ -656,10 +656,9 @@ class SketchRecognitionClassifier(BaseSketchRecognition):
             self.extract_image_descriptors(images=images)
         )
 
-        prediction_probs = self.classifier.predict_proba(code_labels)
+        prediction_probs = self.classifier.prob(code_labels)
 
-        print "TODO finish prediction method"
-        print prediction_probs
+        return prediction_probs
 
     @property
     def in_valid_state(self):
