@@ -5,6 +5,9 @@
 ### Report 
 - Final_Report.pdf
 
+### Working prototype
+https://sketching.herokuapp.com/sccanvas.html
+
 ### Running the project 
 1. Download the dataset from http://cybertron.cg.tu-berlin.de/eitz/projects/classifysketch/sketches_png.zip
 2. Unarchive the contents into the root folder where this project resides i.e. the extracted folder 'png' should be at the same level as this project (sketchrecognition)
